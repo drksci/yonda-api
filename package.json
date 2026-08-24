@@ -1,0 +1,31 @@
+{
+  "name": "yonda-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Firebase Cloud Functions and AI narrative backend for Yonda",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "scrape:osm": "ts-node src/scripts/runScraper.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.1.0",
+    "firebase-functions": "^6.3.0",
+    "ngeohash": "^0.6.3",
+    "openai": "^4.85.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
